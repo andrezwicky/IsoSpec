@@ -62,7 +62,7 @@
     #include <windows.h>
     //#if defined(_MSC_VER)
         #include <malloc.h>   // _aligned_malloc / _aligned_free
-    #endif
+    //#endif
 #elif ISOSPEC_WE_ARE_ON_UNIX_YAY
     #include <sys/mman.h>   // real system mmap/munmap (+ mremap on Linux)
     #include <unistd.h>     // sysconf
