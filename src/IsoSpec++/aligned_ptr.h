@@ -51,7 +51,8 @@
 // and release() falls back to materialising a fresh plain-malloc()'d copy
 // to keep its free()-compatibility promise -- the same thing it already
 // does to escape a VM-backed region.
-#if defined(_MSC_VER)
+#if ISOSPEC_WE_ARE_ON_WINDOWS
+//#if defined(_MSC_VER)
 #define ISOSPEC_ALIGNED_PTR_SMALL_BACKEND_FREE_COMPATIBLE 0
 #else
 #define ISOSPEC_ALIGNED_PTR_SMALL_BACKEND_FREE_COMPATIBLE 1
@@ -59,7 +60,7 @@
 
 #if ISOSPEC_WE_ARE_ON_WINDOWS
     #include <windows.h>
-    #if defined(_MSC_VER)
+    //#if defined(_MSC_VER)
         #include <malloc.h>   // _aligned_malloc / _aligned_free
     #endif
 #elif ISOSPEC_WE_ARE_ON_UNIX_YAY
